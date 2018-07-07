@@ -33,6 +33,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'resources/assets/js/datepicker.js',
         'resources/assets/js/daterangepicker.js',
     ],'public/js/datepicker.js')
+    .scripts([
+        'resources/assets/js/costum.js',
+    ],'public/js/costum.js')
+    .scripts([
+        'resources/assets/js/list.min.js',
+    ],'public/js/list.min.js')
+
    	.styles([
         'resources/assets/css/limitless/icons/icomoon/styles.css',
         'resources/assets/css/limitless/bootstrap.min.css',
@@ -40,6 +47,11 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'resources/assets/css/limitless/components.min.css',
         'resources/assets/css/limitless/colors.min.css',
     ],'public/css/backend.css')
+    .styles([
+        'resources/assets/css/costum.css',
+        'resources/assets/css/responsive.css',
+    ],'public/css/costum.css')
+    
    	.copyDirectory('resources/assets/fonts/icomoon','public/fonts/icomoon')
    	.copyDirectory('resources/assets/images', 'public/images')
     .copyDirectory('resources/assets/vendor/summernote','public/vendor/summernote')

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('check');
+    return view('profile');
 })->name('index');;
 
 
