@@ -1,0 +1,278 @@
+.main-content-wrapper{
+    min-height: calc(100vh);
+}
+h1{
+
+}
+h2{
+    background-color: transparent;
+}
+a{
+    color: #87C0C5;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .25s ease-in; 
+}
+a:hover,a:focus{
+    color: #33666B;
+    text-decoration: none;
+    transition: all .25s ease-out; 
+}
+.no-p{
+    padding: 0px;
+}
+#profilesummary{
+
+}
+#profilesummary .name{
+    border-left: 4px solid #E02528;
+    margin: 40px 0px;
+    padding: 0px;
+}
+#profilesummary .name h1{
+    color: #424242;
+    margin: 0px;
+    font-weight: bolder;
+}
+#profilesummary .detail{
+    padding: 35px 20px;
+    background-color: #282828;
+    margin: 0px;
+}
+#profilesummary .detail .img-profile{
+    height: 250px;
+    width: 100%;
+}
+#profilesummary .detail .img-profile img{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+#profilesummary .detail{
+
+}
+#profilesummary .detail .info{
+
+}
+#profilesummary .detail .info .table{
+
+}
+#profilesummary .detail .info .table td{
+    color: #fff;
+    border-top: transparent;
+    font-weight: bold;
+}
+#profilesummary .detail .info{
+
+}
+#profilesummary .detail .info{
+
+}
+
+#profilecontent{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#profilecontent .title{
+    color: #E02528;
+    font-weight: bold;
+    margin-bottom: 20px;    
+}
+#profilecontent .title h2{
+    margin: 0px;
+}
+#profilecontent .profile-movies .title .text-right{
+    padding-top: 10px;
+    padding-right: 25px;
+}
+.sidebar{
+
+}
+.sidebar .side-card{
+    
+}
+.sidebar .side-card .movie-card{
+    border:1px solid #DADADA;
+}
+.sidebar .side-card .movie-card{
+    
+}
+.sidebar .side-card .movie-card .title{
+    
+}
+.sidebar .side-card .movie-card .detail{
+    background-color: #282828;
+    padding: 15px;
+}
+.sidebar .side-card .movie-card .detail table{
+    margin-bottom: 0px;
+    border-top: transparent;
+}
+.sidebar .side-card .movie-card .detail h3{
+    color: #fff;
+    margin-top: 0px;
+}
+.sidebar .side-card .movie-card .detail td{
+    color: #fff;
+    border-top: transparent;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.sidebar .side-card .movie-card .description{
+    padding: 15px;
+}
+
+.sidebar{
+    
+}
+
+.movies-gallery{
+    /*color: #424246;*/
+}
+.movies-gallery a{
+    color: unset;
+}
+.movies-gallery a:hover{
+    
+}
+.movies-gallery .mov-gal-item{
+    border: 1px solid #DADADA;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.movies-gallery a:hover .mov-gal-item{
+    box-shadow: 0px 0px 10px #DADADA;
+}
+.movies-gallery .mov-gal-item .item-image{
+    height: 125px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.movies-gallery .col-gal{
+    padding-left: 0px;
+    padding-right: 10px;
+}
+.movies-gallery .col-gal:nth-child(odd) .mov-gal-item .item-image{
+    background-color: #5B3587;
+}
+.movies-gallery .col-gal:nth-child(even) .mov-gal-item .item-image{
+    background-color: #E75B30;
+}
+.movies-gallery .mov-gal-item .item-image img{
+    object-position: center;
+    object-fit: contain;
+    /*height: 100%;*/
+    width: 25%;
+    transition: all .25s ease-in;
+}
+.movies-gallery a:hover .mov-gal-item .item-image  img{
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transition: all .25s ease-in;
+}
+.movies-gallery .mov-gal-item .item-desc{
+    padding: 15px;
+}
+.movies-gallery .mov-gal-item .item-desc h3{
+    margin-top: 0px;
+    font-weight: bold;
+}
+.movies-gallery .mov-gal-item .item-desc p:nth-last-child(1){
+    margin-bottom: 0px;
+}
+.movies-gallery .mov-gal-item .item-desc table td{
+    border-top: transparent;
+}
+.movies-gallery {
+    
+}
+
+#modal-movie{
+
+}
+#modal-movie .close{
+    color: #fff !important;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+#modal-movie .modal-header{
+    color: #fff;
+    font-weight: bolder;
+    background-color: #000;
+}
+#modal-movie .modal-body{
+    border-color: transparent;
+    background-color: #000;
+    background-color: #000;
+}
+#modal-movie .modal-footer{
+    border-color: transparent;
+    background-color: #000;
+}
+#sw-modal-content{
+    height: 500px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: #FFFF82;
+    overflow: hidden;
+}
+#crawl-starwars
+{
+    position: absolute;
+    width: 100%;
+    height: 50em;
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+    font-size: 350%;
+    font-weight: bold;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(25deg);
+}
+#crawl-starwars:after
+{
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    pointer-events: none;
+}
+#crawl-content
+{
+    position: absolute;
+    top: 100%;
+    animation: scroll 100s linear 0s infinite;
+}
+
+@keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+}
+
+
+#modal-cast{
+    
+}
+#modal-cast ul{
+    padding: 15px;
+}
+#modal-cast ul li{
+    display: inline;
+}
+#modal-cast{
+    
+}
