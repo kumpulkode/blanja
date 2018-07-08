@@ -36,6 +36,7 @@
     </head>
 
     <body>
+    <div id="vueapp">
         <header>
         </header>
 
@@ -50,7 +51,7 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         @yield('modal')
-
+    </div>
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="{{ mix('js/costum.js') }}"></script>
 

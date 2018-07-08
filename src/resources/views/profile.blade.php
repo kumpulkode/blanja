@@ -17,7 +17,7 @@
             <div class="row name">
                 <div class="col-md-10 col-sm-10 col-xs-12">
                     <h1>
-                        Luke Skywalker
+                        @{{ castName }}
                     </h1>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-12 text-right">
@@ -39,32 +39,32 @@
                                 <tr>
                                     <td>Height</td>
                                     <td>:</td>
-                                    <td>172 Cm</td>
+                                    <td>@{{castHeight}}</td>
                                 </tr>
                                 <tr>
                                     <td>Mass</td>
                                     <td>:</td>
-                                    <td>Blond</td>
+                                    <td>@{{castMass}}</td>
                                 </tr>
                                 <tr>
                                     <td>Hair Color</td>
                                     <td>:</td>
-                                    <td>Fair</td>
+                                    <td>@{{castHairColor}}</td>
                                 </tr>
                                 <tr>
                                     <td>Skin Color</td>
                                     <td>:</td>
-                                    <td>Blue</td>
+                                    <td>@{{castSkinColor}}</td>
                                 </tr>
                                 <tr>
                                     <td>Birth Year</td>
                                     <td>:</td>
-                                    <td>19 June 2010</td>
+                                    <td>@{{castBirthYear}}</td>
                                 </tr>
                                 <tr>
                                     <td>Gender</td>
                                     <td>:</td>
-                                    <td>Male</td>
+                                    <td>@{{castGender}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -84,36 +84,36 @@
                             <div class="title row">
                                 <div class="col-sm-8">
                                     <h2>
-                                        Skywalkers Movie's
+                                        @{{ castName }} Movie's
                                     </h2>
                                 </div>
                                 <div class="col-sm-4 text-right">
                                     <a href="#">See More</a>
                                 </div>
                             </div> 
-                            <div class="movies-gallery">
-                            @for($key=0;$key<=10;$key++)
-                                <div class="col-md-3 col-sm-4 col-xs-12 col-gal">
-                                    <a data-toggle="modal" href='#modal-movie'>
+                            <div class="movies-gallery" v-if="movieCastList.length">
+                            {{-- @for($key=0;$key<=10;$key++) --}}
+                                <div class="col-md-3 col-sm-4 col-xs-12 col-gal" v-for="listMovie in movieCastList" :key="listMovie.data.title">
+                                    <a href="#"  v-on:click="movieModal(listMovie.data)">
                                         <div class="mov-gal-item">
                                             <div class="item-image">
                                                 <img src="{{asset('images/play.png')}}">
                                             </div>
                                             <div class="item-desc">
-                                                <h3>The Empire Strikes Back</h3>
+                                                <h3>@{{listMovie.data.title}}</h3>
                                                 <p>
                                                     Director:
-                                                    <br>Irvin Karsher
+                                                    <br>@{{listMovie.data.director}}
                                                 </p>
                                                 <p>
                                                     Release:
-                                                    <br>1980-05-17
+                                                    <br>@{{listMovie.data.release_date}}
                                                 </p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                            @endfor
+                            {{-- @endfor --}}
                             </div>
                         </div>
                     </div>
@@ -127,35 +127,30 @@
                             </div>
                             <div class="movie-card">
                                 <div class="detail">
-                                    <h3>The Force Awakens</h3>
+                                    <h3>@{{anotherMovie.title}}</h3>
                                     <table class="table">
                                         <tbody>
                                             <tr>
                                                 <td>Director</td>
                                                 <td>:</td>
-                                                <td>J. J. Abrams</td>
+                                                <td>@{{anotherMovie.director}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Producer</td>
                                                 <td>:</td>
-                                                <td>Kathleen Kennedy, J.J. Abrams, Brayn Bulk</td>
+                                                <td>@{{anotherMovie.producer}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Release Date</td>
                                                 <td>:</td>
-                                                <td>2015-12-11</td>
+                                                <td>@{{anotherMovie.release_date}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="description">
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        @{{anotherMovie.opening_crawl}}
                                     </p>
                                     <p class="text-right">
                                         <a href="#">See More</a>
@@ -176,15 +171,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Modal title</h4>
+                    <h4 class="modal-title">@{{mTitle}}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="col-xs-12" id="sw-modal-content">
                         <div id="crawl-starwars">
                             <div id="crawl-content">
-                                <p class="text-center">Episode 4</p>
-                                <p class="text-center">A New Hope</p>
-                                <p class="text-justify">It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</p>
+                                <p class="text-center">Episode @{{mEpisode}}</p>
+                                <p class="text-center">@{{mTitle}}</p>
+                                <p><br></p>
+                                <p class="text-justify">@{{mCrawl}}.</p>
                             </div>
                         </div>
                     </div>
@@ -206,21 +202,18 @@
                     <div class="row">
                         <div class="col-xs-12" id="cast-list">
                             <div class="form-group">
-                                <label class="sr-only" for="">label</label>
-                                <input type="text" class="form-control search" id="" placeholder="Search Star Wars Cast" width="100%">
+                                <label class="sr-only" for="">Form Search Cast</label>
+                                <input type="text" class="form-control search" id="" placeholder="Search Star Wars Cast" width="100%" v-model="searchCastForm">
                             </div>
-                            <ul class="list">
-                                @for($keys=0;$keys<40;$keys++)
-                                    <li>
-                                        <a href="#" class="cast">People {{$keys}}, </a>
-                                    </li>
-                                @endfor
+                            <ul class="list" v-if="listCast.length">
+                                <li v-for="lists in listCast" :key="lists.name">
+                                    <a href="#" v-on:click="changeCast(lists.url)" class="cast">@{{lists.name}} , </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    
                 </div>
             </div>
         </div>
@@ -228,7 +221,128 @@
 @endsection
 
 @section('content-js') 
-    <script src="{{ mix('js/list.min.js') }}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#vueapp",
+            data:{
+                castName: "Fetching Data",
+                castHeight: "",
+                castMass:"",
+                castHairColor:"",
+                castSkinColor:"",
+                castBirthYear:"",
+                castGender:"",
+                listCast:[],
+                searchCastForm:"",
+                movieCastList:[],
+                mTitle:"",
+                mEpisode:"",
+                mCrawl:"",
+                anotherMovie:[],
+            },
+            created: function () {
+                //getListCast for choose
+                var mListCast = this
+                axios.get('https://swapi.co/api/people/?format=json').then(function(rp){
+                    console.log(rp.data.results);
+                    mListCast.listCast = rp.data.results;
+                })
+
+                //get default cast
+                var defaultCast = this
+                    defaultCast.castName="Fetching Data"
+                    axios.get('https://swapi.co/api/people/1/?format=json')
+                        .then(function(response){
+                            defaultCast.castName = response.data.name;
+                            defaultCast.castHeight = response.data.height  + " cm";
+                            defaultCast.castMass = response.data.mass;
+                            defaultCast.castHairColor = response.data.hair_color;
+                            defaultCast.castSkinColor = response.data.skin_color;
+                            defaultCast.castBirthYear = response.data.birth_year;
+                            defaultCast.castGender = response.data.gender;
+
+                            defaultCast.movieCastList = [];
+                            for (var i = response.data.films.length - 1; i >= 0; i--) {
+                                // console.log(response.data.films[i])
+                                axios.get(response.data.films[i])
+                                .then(function(responseFilm){
+                                    defaultCast.movieCastList.push(responseFilm);
+                                })
+                            }
+                        })
+
+                //get another random movie
+                var anoMovie = this
+                anoMovie.anotherMovie='';
+                var randomId = Math.floor(Math.random() * 6) + 1 ;
+                axios.get('https://swapi.co/api/films/'+randomId+'/?format=json').then(function(resRandMov){
+                    anoMovie.anotherMovie = resRandMov.data;
+                })
+
+            },
+            watch:{
+                searchCastForm:function(){
+                    this.searchCast();
+                }
+            },
+            methods:{
+                changeCast:function(getData){
+                    $('#modal-cast').modal('toggle');
+                    // console.log(getData);
+                    var appCast = this
+                    appCast.castName="Fetching Data"
+                    axios.get(getData+'?format=json')
+                        .then(function(response){
+                            appCast.castName = response.data.name;
+                            appCast.castHeight = response.data.height  + " cm";
+                            appCast.castMass = response.data.mass;
+                            appCast.castHairColor = response.data.hair_color;
+                            appCast.castSkinColor = response.data.skin_color;
+                            appCast.castBirthYear = response.data.birth_year;
+                            appCast.castGender = response.data.gender;
+
+                            appCast.movieCastList = [];
+                            for (var i = response.data.films.length - 1; i >= 0; i--) {
+                                // console.log(response.data.films[i])
+                                axios.get(response.data.films[i])
+                                .then(function(responseFilm){
+                                    appCast.movieCastList.push(responseFilm);
+                                })
+                            }
+
+                            //get another random movie
+                            appCast.anotherMovie='';
+                            var randomId = Math.floor(Math.random() * 6) + 1 ;
+                            axios.get('https://swapi.co/api/films/'+randomId+'/?format=json').then(function(resRandMov){
+                                appCast.anotherMovie = resRandMov.data;
+                            })
+                        })
+                },
+                searchCast: _.debounce(function(){
+                    var mListCast = this
+                    axios.get('https://swapi.co/api/people/?search='+mListCast.searchCastForm+'&format=json').then(function(rp){
+                        console.log(rp.data.results);
+                        mListCast.listCast = rp.data.results;
+                    })
+                },500),
+                movieModal:function(getData){
+                    $('#modal-movie').modal('show'); 
+
+                    var movModal = this
+                    movModal.mTitle = getData.title;
+                    movModal.mEpisode = getData.episode_id;
+                    movModal.mCrawl = getData.opening_crawl;
+
+                }
+
+            }
+        
+            
+        })
+    </script>
+
 
     <script type="text/javascript">
         $(function(){
@@ -253,16 +367,6 @@
                     var randomY = Math.floor(Math.random()*y);
                 return [randomX,randomY];
             }
-        });
-    </script>
-    
-    <script type="text/javascript">
-        $(function() {
-            var options = {
-                valueNames: [ 'cast']
-            };
-
-            var userList = new List('cast-list', options);
         });
     </script>
 @endsection
