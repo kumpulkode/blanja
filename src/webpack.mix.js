@@ -37,8 +37,12 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'resources/assets/js/costum.js',
     ],'public/js/costum.js')
     .scripts([
-        'resources/assets/js/list.min.js',
-    ],'public/js/list.min.js')
+        'resources/assets/js/axios.min.js',
+    ],'public/js/axios.min.js')
+    .scripts([
+        'resources/assets/vendor/moment/moment.min.js',
+        'resources/assets/js/jgrowl.min.js',
+    ],'public/js/jgrowl.min.js')
 
    	.styles([
         'resources/assets/css/limitless/icons/icomoon/styles.css',
